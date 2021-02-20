@@ -7,7 +7,9 @@ export async function setupAutoUpdater (): Promise<void> {
   const { autoUpdater } = await import('electron-updater');
 
   await setLogger(autoUpdater);
-  autoUpdater.checkForUpdatesAndNotify().catch(console.error);
+  autoUpdater.checkForUpdatesAndNotify().then(value => {
+    console.log(' update check value ', value)
+  }).catch(console.error);
 }
 
 async function setLogger (autoUpdater: AppUpdater): Promise<void> {

@@ -1,6 +1,6 @@
 {
   "name": "polkadot-apps",
-  "repository": "https://github.com/polkadot-js/apps",
+  "repository": "https://github.com/crustio/crust-apps",
   "main": "packages/apps-electron/build/electron.js",
   "description": "An Apps portal into the Polkadot network",
   "author": "Jaco Greeff <jacogr@gmail.com>",
@@ -43,7 +43,7 @@
     "build:electronMain": "cd packages/apps-electron && yarn webpack --config webpack.main.js",
     "packElectron:test": "yarn build:release:electron && electron-builder --dir",
     "packElectron:mac": "yarn build:release:electron && electron-builder build --mac",
-    "packElectron:win": "yarn build:release:electron && electron-builder build --win",
+    "packElectron:win": "yarn build:release:electron && electron-builder build --win --ia32",
     "packElectron:linux": "yarn build:release:electron && electron-builder build --linux",
     "packElectron": "yarn build:release:electron && yarn clean:electronRelease && electron-builder build -mwl",
     "docs": "echo \"skipping docs\"",
